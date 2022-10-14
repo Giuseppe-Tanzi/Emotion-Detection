@@ -31,15 +31,30 @@ The following processing step have been performed:
 
 ## First Model
 
-<p align="center">
-    <img src="./res/first_model.png" alt="alt text" width="300" align = middle/>
-</p>
+The model applied in this study use the long-short term memory networks (LSTM) in their bidirectional variation and the convolutional neural netowrks (CNN) mediated by a max pooling approach. Furthermore they use a self-attention layer to allow the system to capture distant relationships among words with a different weight depending theirs contribute for classification.
+
+In particural the architecture is the following:
+- the first layer is an embedding layer that has the pre-trained Gloove embedding matrix;
+- the second layer is a Bi-LSTM layer that considers the intrinsic sequential relationship between the terms of a sentence;
+- the third layer is a Self-Attention layer that provides the model ability to weight the vectors of single words of the sentence differently, according to the similarity of the neighboring tokens;
+- the fourth layer is a CNN layer, ideal for working on data with a shape of grid; the result is a grid more dense and smaller of the previous that captures the hidden relations among cells that fall in the kernel dimension;
+- it has been applied a between the output of the CNN layer and the output of the previous Bi-LSTM layer in order to letting the model to better conceptualize both local and long-term features;
+- then there are operations of max pooling followed by operations of global average pooling;
+- finally there are dense layers that estimates the probability distribution of each of the emotional classes of the dataset.
+
+
+I added some regularizer into the self attention layer in order to prevent overfitting
 
 ## Second Model
 
-<p align="center">
-    <img src="./res/second_model.png" alt="alt text" width="300" align = middle/>
-</p>
+The proposed TCN model is inspired by Christof Henkel<sup>3</sup>, one of the grandmasters on Kaggle.
+
+The model consists of:
+- Two TCN blocks stacked with the kernel size of 3 and dilation factors of 1, 2, and 4;
+- The first TCN block contains 128 filters, and the second block uses 64 filters; the input features will be based on Word Embedding;
+- Each block’s result will take the form of a sequence;
+- The final sequence is then passed to two different global pooling layers;
+- Next, both results are concatenated and passed into a dense layer of 16 neurons, and pass to the output.
 
 ## Results
 
