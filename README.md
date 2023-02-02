@@ -1,4 +1,7 @@
 # Emotion Detection
+<a target="_blank" href="https://colab.research.google.com/github/giuseppe-tanzi/Emotion-Detection/blob/main/Emotion-Detection.ipynb">
+  <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/>
+</a>
 
 Project work for the "Deep Learning" course of the Artificial Intelligence Master's Degree at University of Bologna.
 
