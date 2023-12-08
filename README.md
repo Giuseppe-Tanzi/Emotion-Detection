@@ -3,8 +3,6 @@
   <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/>
 </a>
 
-Project work for the "Deep Learning" course of the Artificial Intelligence Master's Degree at University of Bologna.
-
 ## Problem
 
 The task consists in creating an Emotion Detection model, able to recognise the emotion expressed in a given
